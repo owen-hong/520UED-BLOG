@@ -1,0 +1,654 @@
+
+/* GLOBAL
+------------------------------------------- */
+div.wizylike_button {
+	float: left;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+div.wizylike_button * {
+	display: block;
+	float: left;
+}
+div.wizylike_button span.wizylike_icon {
+	display: block;
+	text-indent: -999em;
+	float: left;	
+}
+
+
+
+/* STYLE 1
+------------------------------------------- */
+div.wizylike_button.style_1 {
+	height: 18px;
+	line-height: 18px;
+	background: url(../images/wizylike.png) no-repeat center -1px;
+	padding: 0 5px;
+	color: #818181;
+	text-shadow: 0px 1px 0px #ffffff;
+	filter: dropshadow(color=#ffffff, offx=0, offy=1);
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+div.wizylike_button.style_1.light_bg,
+div.wizylike_button.style_1.modal:hover {
+	border: solid 1px #b6b6b6;	
+}
+div.wizylike_button.style_1.light_bg:hover {
+	border: solid 1px #707070;
+}
+div.wizylike_button.style_1.dark_bg:hover {
+	border: solid 1px #fff;
+}
+div.wizylike_button.style_1.modal:hover {
+	border: solid 1px #b6b6b6;	
+}
+div.wizylike_button.style_1 span.wizylike_icon {
+	background: url(../images/wizylike.png) no-repeat left -40px;
+	height: 9px;	
+	width: 10px;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+div.wizylike_button.style_1 span.wizylike_linebreaker {
+	height: 18px;
+	width: 2px;
+	background: url(../images/style_1_linebreaker.png) no-repeat right top;	
+}
+div.wizylike_button.style_1 span.wizylike_count {
+	padding: 0 6px 0 5px;
+}
+div.wizylike_button.style_1.modal span.wizylike_count {
+	padding: 0 1px 0 5px;
+}
+div.wizylike_button.style_1 span.wizylike_like_unlike {
+	padding: 0 1px 0 6px;
+}
+body div.wizylike_button.style_1.modal:hover span.wizylike_icon {
+	background: url(../images/wizylike.png) no-repeat left -40px;
+	cursor: auto;
+}
+div.wizylike_button.style_1 span.wizylike_loading {
+	width: 12px;
+	text-indent: -999em;
+	background: url(../images/loader.gif) no-repeat right;
+}
+
+/* STYLE 1 RED ------------ */
+div.wizylike_button.style_1.red:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -49px;
+}
+div.wizylike_button.style_1.red:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.red span.wizylike_like_unlike:hover {
+	color: #cc0000;
+	cursor: pointer;
+}
+
+/* STYLE 1 PINK ------------ */
+div.wizylike_button.style_1.pink:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -58px;
+}
+div.wizylike_button.style_1.pink:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.pink span.wizylike_like_unlike:hover {
+	color: #d8207b;
+	cursor: pointer;
+}
+/* STYLE 1 PURPLE ------------ */
+div.wizylike_button.style_1.purple:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -67px;
+}
+div.wizylike_button.style_1.purple:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.purple span.wizylike_like_unlike:hover {
+	color: #9520d8;
+	cursor: pointer;
+}
+
+/* STYLE 1 BLUE ------------ */
+div.wizylike_button.style_1.blue:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -76px;
+}
+div.wizylike_button.style_1.blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.blue span.wizylike_like_unlike:hover {
+	color: #2061d8;
+	cursor: pointer;
+}
+
+/* STYLE 1 SKU-BLUE ------------ */
+div.wizylike_button.style_1.sky-blue:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -85px;
+}
+div.wizylike_button.style_1.sky-blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.sky-blue span.wizylike_like_unlike:hover {
+	color: #20b3d8;
+	cursor: pointer;
+}
+
+/* STYLE 1 GREENY SKU-BLUE ------------ */
+div.wizylike_button.style_1.greeny_sky-blue:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -94px;
+}
+div.wizylike_button.style_1.greeny_sky-blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.greeny_sky-blue span.wizylike_like_unlike:hover {
+	color: #13cea9;
+	cursor: pointer;
+}
+
+/* STYLE 1 GREEN ------------ */
+div.wizylike_button.style_1.green:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -103px;
+}
+div.wizylike_button.style_1.green:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.green span.wizylike_like_unlike:hover {
+	color: #2bd419;
+	cursor: pointer;
+}
+
+/* STYLE 1 GREENY YELLOW ------------ */
+div.wizylike_button.style_1.greeny-yellow:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -112px;
+}
+div.wizylike_button.style_1.greeny-yellow:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.greeny-yellow span.wizylike_like_unlike:hover {
+	color: #9dd419;
+	cursor: pointer;
+}
+
+/* STYLE 1 YELLOW ------------ */
+div.wizylike_button.style_1.yellow:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -121px;
+}
+div.wizylike_button.style_1.yellow:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.yellow span.wizylike_like_unlike:hover {
+	color: #ddc20e;
+	cursor: pointer;
+}
+
+/* STYLE 1 ORANGE ------------ */
+div.wizylike_button.style_1.orange:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -130px;
+}
+div.wizylike_button.style_1.orange:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.orange span.wizylike_like_unlike:hover {
+	color: #dd830e;
+	cursor: pointer;
+}
+
+/* STYLE 1 ORANGEY RED ------------ */
+div.wizylike_button.style_1.orangey-red:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -139px;
+}
+div.wizylike_button.style_1.orangey-red:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.orangey-red span.wizylike_like_unlike:hover {
+	color: #dd4d0e;
+	cursor: pointer;
+}
+
+/* STYLE 1 BLACK ------------ */
+div.wizylike_button.style_1.black:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat left -148px;
+}
+div.wizylike_button.style_1.black:hover span.wizylike_like_unlike,
+div.wizylike_button.style_1.black span.wizylike_like_unlike:hover {
+	color: #404040;
+	cursor: pointer;
+}
+
+
+
+/* STYLE 2
+------------------------------------------- */
+div.wizylike_button.style_2 {
+	height: 28px;
+	line-height: 28px;
+	background: #e1e1e1;
+	padding: 0 8px;
+	color: #6b6b6b;
+	text-shadow: 0px 1px 0px #ffffff;
+	filter: dropshadow(color=#ffffff, offx=0, offy=1);
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+div.wizylike_button.style_2:hover {
+	background: #e9e9e9;
+}
+div.wizylike_button.style_2 span.wizylike_icon {
+	background: url(../images/wizylike.png) no-repeat -10px -40px;
+	height: 14px;	
+	width: 16px;
+	margin-top: 7px;
+	margin-right: 4px;
+}
+div.wizylike_button.style_2 span.wizylike_linebreaker {
+	display: none;
+}
+div.wizylike_button.style_2 span.wizylike_linebreaker.last {
+	display: block;
+	width: 1px;
+	height: 10px;
+	background: #6b6b6b;
+	margin-top: 9px;
+	margin-right: 8px;	
+}
+div.wizylike_button.style_2 span.wizylike_count {
+	margin-right: 8px;
+}
+div.wizylike_button.style_2.modal span.wizylike_count {
+	margin-right: 0;
+}
+body div.wizylike_button.style_2.modal:hover span.wizylike_icon {
+	background: url(../images/wizylike.png) no-repeat -10px -40px;
+	cursor: auto;
+}
+div.wizylike_button.style_2 span.wizylike_loading {
+	width: 12px;
+	text-indent: -999em;
+	background: url(../images/e1e1e1.gif) no-repeat right;
+}
+
+/* STYLE 2 RED ------------ */
+div.wizylike_button.style_2.red:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -54px;
+}
+div.wizylike_button.style_2.red:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.red span.wizylike_like_unlike:hover {
+	color: #cc0000;
+	cursor: pointer;
+}
+
+/* STYLE 2 PINK ------------ */
+div.wizylike_button.style_2.pink:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -68px;
+}
+div.wizylike_button.style_2.pink:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.pink span.wizylike_like_unlike:hover {
+	color: #d8207b;
+	cursor: pointer;
+}
+
+/* STYLE 2 PURPLE ------------ */
+div.wizylike_button.style_2.purple:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -82px;
+}
+div.wizylike_button.style_2.purple:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.purple span.wizylike_like_unlike:hover {
+	color: #9520d8;
+	cursor: pointer;
+}
+
+/* STYLE 2 BLUE ------------ */
+div.wizylike_button.style_2.blue:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -96px;
+}
+div.wizylike_button.style_2.blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.blue span.wizylike_like_unlike:hover {
+	color: #2061d8;
+	cursor: pointer;
+}
+
+/* STYLE 2 SKY-BLUE ------------ */
+div.wizylike_button.style_2.sky-blue:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -110px;
+}
+div.wizylike_button.style_2.sky-blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.sky-blue span.wizylike_like_unlike:hover {
+	color: #20b3d8;
+	cursor: pointer;
+}
+
+
+/* STYLE 2 GREENY SKY-BLUE ------------ */
+div.wizylike_button.style_2.greeny_sky-blue:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -124px;
+}
+div.wizylike_button.style_2.greeny_sky-blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.greeny_sky-blue span.wizylike_like_unlike:hover {
+	color: #13cea9;
+	cursor: pointer;
+}
+
+/* STYLE 2 GREEN ------------ */
+div.wizylike_button.style_2.green:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -138px;
+}
+div.wizylike_button.style_2.green:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.green span.wizylike_like_unlike:hover {
+	color: #2bd419;
+	cursor: pointer;
+}
+
+/* STYLE 2 GREENY YELLOW ------------ */
+div.wizylike_button.style_2.greeny-yellow:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -152px;
+}
+div.wizylike_button.style_2.greeny-yellow:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.greeny-yellow span.wizylike_like_unlike:hover {
+	color: #9dd419;
+	cursor: pointer;
+}
+
+/* STYLE 2 YELLOW ------------ */
+div.wizylike_button.style_2.yellow:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -166px;
+}
+div.wizylike_button.style_2.yellow:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.yellow span.wizylike_like_unlike:hover {
+	color: #ddc20e;
+	cursor: pointer;
+}
+
+/* STYLE 2 ORANGE ------------ */
+div.wizylike_button.style_2.orange:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -180px;
+}
+div.wizylike_button.style_2.orange:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.orange span.wizylike_like_unlike:hover {
+	color: #dd830e;
+	cursor: pointer;
+}
+
+/* STYLE 2 ORANGEY RED ------------ */
+div.wizylike_button.style_2.orangey-red:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -194px;
+}
+div.wizylike_button.style_2.orangey-red:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.orangey-red span.wizylike_like_unlike:hover {
+	color: #dd4d0e;
+	cursor: pointer;
+}
+
+/* STYLE 2 BLACK ------------ */
+div.wizylike_button.style_2.black:hover span.wizylike_icon {
+	cursor: pointer;
+	background: url(../images/wizylike.png) no-repeat -10px -208px;
+}
+div.wizylike_button.style_2.black:hover span.wizylike_like_unlike,
+div.wizylike_button.style_2.black span.wizylike_like_unlike:hover {
+	color: #404040;
+	cursor: pointer;
+}
+
+
+
+/* STYLE 3
+------------------------------------------- */
+div.wizylike_button.style_3 {
+	height: 28px;
+	line-height: 28px;
+	padding: 0 8px;
+	color: #fff;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, .3);
+	filter: dropshadow(color=#ffffff, offx=0, offy=1);
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+div.wizylike_button.style_3:hover {
+	background: #e9e9e9;
+}
+div.wizylike_button.style_3 span.wizylike_icon {
+	background: url(../images/wizylike.png) no-repeat -10px -222px;
+	height: 14px;	
+	width: 16px;
+	margin-top: 7px;
+	margin-right: 4px;
+}
+div.wizylike_button.style_3 span.wizylike_linebreaker {
+	display: none;
+}
+div.wizylike_button.style_3 span.wizylike_linebreaker.last {
+	display: block;
+	width: 1px;
+	height: 10px;
+	background: #fff;
+	margin-top: 9px;
+	margin-right: 8px;	
+}
+div.wizylike_button.style_3 span.wizylike_count {
+	margin-right: 8px;
+}
+div.wizylike_button.style_3.modal span.wizylike_count {
+	margin-right: 0;
+}
+div.wizylike_button.style_3 span.wizylike_loading {
+	width: 12px;
+	text-indent: -999em;
+	background: url(../images/e1e1e1.gif) no-repeat right;
+}
+
+/* STYLE 3 GRAY ------------ */
+div.wizylike_button.style_3.gray {
+	background: #aaaaaa;
+}
+div.wizylike_button.style_3.gray:hover {
+	cursor: pointer;
+	background: #bdbdbd;
+}
+div.wizylike_button.style_3.gray:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.gray span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.gray span.wizylike_loading {
+	background: url(../images/aaa.gif) no-repeat right;
+}
+
+/* STYLE 3 RED ------------ */
+div.wizylike_button.style_3.red {
+	background: #c72c2c;
+}
+div.wizylike_button.style_3.red:hover {
+	cursor: pointer;
+	background: #e83939;
+}
+div.wizylike_button.style_3.red:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.red span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.red span.wizylike_loading {
+	background: url(../images/c72c2c.gif) no-repeat right;
+}
+
+/* STYLE 3 PINK ------------ */
+div.wizylike_button.style_3.pink {
+	background: #d8207b;
+}
+div.wizylike_button.style_3.pink:hover {
+	cursor: pointer;
+	background: #e34392;
+}
+div.wizylike_button.style_3.pink:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.pink span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.pink span.wizylike_loading {
+	background: url(../images/d8207b.gif) no-repeat right;
+}
+
+/* STYLE 3 PURPLE ------------ */
+div.wizylike_button.style_3.purple {
+	background: #9520d8;
+}
+div.wizylike_button.style_3.purple:hover {
+	cursor: pointer;
+	background: #aa46e3;
+}
+div.wizylike_button.style_3.purple:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.purple span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.purple span.wizylike_loading {
+	background: url(../images/9520d8.gif) no-repeat right;
+}
+
+
+/* STYLE 3 BLUE ------------ */
+div.wizylike_button.style_3.blue {
+	background: #1763ee;
+}
+div.wizylike_button.style_3.blue:hover {
+	cursor: pointer;
+	background: #4e86eb;
+}
+div.wizylike_button.style_3.blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.blue span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.blue span.wizylike_loading {
+	background: url(../images/1763ee.gif) no-repeat right;
+}
+
+/* STYLE 3 SKY-BLUE ------------ */
+div.wizylike_button.style_3.sky-blue {
+	background: #20b3d8;
+}
+div.wizylike_button.style_3.sky-blue:hover {
+	cursor: pointer;
+	background: #63bed5;
+}
+div.wizylike_button.style_3.sky-blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.sky-blue span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.sky-blue span.wizylike_loading {
+	background: url(../images/20b3d8.gif) no-repeat right;
+}
+
+/* STYLE 3 GREENY SKY-BLUE ------------ */
+div.wizylike_button.style_3.greeny_sky-blue {
+	background: #13ce93;
+}
+div.wizylike_button.style_3.greeny_sky-blue:hover {
+	cursor: pointer;
+	background: #48d0a5;
+}
+div.wizylike_button.style_3.greeny_sky-blue:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.greeny_sky-blue span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.greeny_sky-blue span.wizylike_loading {
+	background: url(../images/13ce93.gif) no-repeat right;
+}
+
+/* STYLE 3 GREEN ------------ */
+div.wizylike_button.style_3.green {
+	background: #2bd419;
+}
+div.wizylike_button.style_3.green:hover {
+	cursor: pointer;
+	background: #58d24b;
+}
+div.wizylike_button.style_3.green:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.green span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.green span.wizylike_loading {
+	background: url(../images/2bd419.gif) no-repeat right;
+}
+
+/* STYLE 3 GREENY YELLOW ------------ */
+div.wizylike_button.style_3.greeny-yellow {
+	background: #9dd419;
+}
+div.wizylike_button.style_3.greeny-yellow:hover {
+	cursor: pointer;
+	background: #baec44;
+}
+div.wizylike_button.style_3.greeny-yellow:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.greeny-yellow span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.greeny-yellow span.wizylike_loading {
+	background: url(../images/9dd419.gif) no-repeat right;
+}
+
+/* STYLE 3 YELLOW ------------ */
+div.wizylike_button.style_3.yellow {
+	background: #fad900;
+}
+div.wizylike_button.style_3.yellow:hover {
+	cursor: pointer;
+	background: #f5db31;
+}
+div.wizylike_button.style_3.yellow:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.yellow span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.yellow span.wizylike_loading {
+	background: url(../images/fad900.gif) no-repeat right;
+}
+
+/* STYLE 3 ORANGE ------------ */
+div.wizylike_button.style_3.orange {
+	background: #fa8d00;
+}
+div.wizylike_button.style_3.orange:hover {
+	cursor: pointer;
+	background: #f6a640;
+}
+div.wizylike_button.style_3.orange:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.orange span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.orange span.wizylike_loading {
+	background: url(../images/fa8d00.gif) no-repeat right;
+}
+
+/* STYLE 3 ORANGEY RED ------------ */
+div.wizylike_button.style_3.orangey-red {
+	background: #dd4d0e;
+}
+div.wizylike_button.style_3.orangey-red:hover {
+	cursor: pointer;
+	background: #e9703a;
+}
+div.wizylike_button.style_3.orangey-red:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.orangey-red span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.orangey-red span.wizylike_loading {
+	background: url(../images/dd4d0e.gif) no-repeat right;
+}
+
+/* STYLE 3 BLACK ------------ */
+div.wizylike_button.style_3.black {
+	background: #404040;
+}
+div.wizylike_button.style_3.black:hover {
+	cursor: pointer;
+	background: #494949;
+}
+div.wizylike_button.style_3.black:hover span.wizylike_like_unlike,
+div.wizylike_button.style_3.black span.wizylike_like_unlike:hover {
+	cursor: pointer;
+}
+div.wizylike_button.style_3.black span.wizylike_loading {
+	background: url(../images/404040.gif) no-repeat right;
+}

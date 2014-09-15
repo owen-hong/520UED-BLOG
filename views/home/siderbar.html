@@ -1,0 +1,28 @@
+<!--  侧栏开始  -->
+<div class="five columns ">
+    <div id="right">
+        <div class="sidebar">
+            <ul>
+                <li class="sidebox widget_recent_entries">
+                    <div class="sidetitl">
+                        <h3>READ MORE</h3>
+                    </div>
+                    <ul>
+                        <% siderbar.forEach(function(posts){ %>
+                        <li>
+                            <a href="/article/<%= posts._id %>" title="<%= posts.title %>"><%= posts.title %></a>
+                        </li>
+                        <% }) %>
+
+                    </ul>
+                </li>
+            </ul>
+            <!-- <div class="isuxads-img">
+                <a href="javascript::" target="_blank">
+                    <img src="http://isux.tencent.com/wp-content/themes/isux_v1/images/cover.png" alt="众妙之门网站重新设计之道">
+                </a>
+            </div> -->
+        </div>
+    </div>
+</div>
+<!--  侧栏结束  -->

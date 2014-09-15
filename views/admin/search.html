@@ -1,0 +1,68 @@
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"> 
+            <i class="icon-th"></i> 
+        </span>
+        <h5><%= title %></h5>
+    </div>
+    <div class="widget-content nopadding">
+        <table class="table table-bordered table-striped with-check">
+            <thead>
+                <tr>
+                    <th>
+                        <i class="icon-resize-vertical"></i>
+                    </th>
+                    <th>标题</th>
+                    <th>创建时间</th>
+                    <th>更新时间</th>
+                    <th>发布人</th>
+                    <th>分类</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(posts!=="") { %>
+                    <% posts.forEach(function(post, index) { %>
+                    <tr>
+                        <td>
+                            <%= index +1 %>
+                        </td>
+                        <td>
+                            <%= post.title %>
+                        </td>
+                        <td>
+                            <%= locals.moment(post.created).format("YYYY-MM-DD h:mm a") %>
+                        </td>
+                        <td>
+                            <%= locals.moment(post.updated).format("YYYY-MM-DD h:mm a") %>
+                        </td>
+                        <td>
+                            <%= post.author %>
+                        </td>
+                        <td class="center">
+                            <%= post.classify %>
+                        </td>
+                        <td class="center">
+                            <a href="/admin/editArt?artId=<%= post._id %>" class="btn btn-info">编辑</a>
+                            <a href="/admin/deletArt?artId=<%= post._id %>" onclick="delcfm()" class="btn btn-danger">删除</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                <% } %>
+                <% if(posts!=="") { %>
+                    <tr>
+                        <td colspan="7">
+                            <%= nullTip %>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <!-- 分页 -->
+    <div class="dataTables_wrapper">
+        <div class="fg-toolbar ui-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix" id="pager">
+            <!-- 分页内容 -->
+        </div>
+    </div>
+</div>

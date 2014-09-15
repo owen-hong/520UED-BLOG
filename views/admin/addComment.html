@@ -1,0 +1,53 @@
+<div class="row-fluid">
+	<div class="span12">
+		<div class="widget-box">
+			<div class="widget-title">
+				<span class="icon">
+					<i class="icon-align-justify"></i>
+				</span>
+				<h5><%= title %></h5>
+			</div>
+			<div class="widget-content nopadding">
+				<form action="/admin/doaddComment" method="post" class="form-horizontal">
+					<input type="hidden" name="artid" value="id123" />
+					<input type="hidden" name="arttil" value="javascript性能检测" />
+					<div class="control-group">
+						<label class="control-label">昵称 :</label>
+						<div class="controls">
+							<input type="text" name="username" class="span11" placeholder="必填" />
+						</div>
+					</div>
+					<div class="control-group" id="oneClass">
+						<label class="control-label">Email :</label>
+						<div class="controls">
+							<input type="email" name="email" class="span11" placeholder="必填" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">网址 :</label>
+						<div class="controls">
+							<input type="text" name="website" class="span11" placeholder="网址" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">内容 :</label>
+						<div class="controls">
+							<textarea name="content" class="span11" default="请留下你的足迹" value="请留下你的足迹"></textarea>
+						</div>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn btn-success">Save</button>
+					</div>
+					<input type='hidden' name='_csrf' id="_csrf" value='<%= csrf %>' />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+
+	});
+</script>
+

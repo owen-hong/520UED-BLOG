@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+    <!--[if IE 6]>
+        <html id="ie6" lang="zh-CN">
+    <![endif]-->
+    <!--[if IE 7]>
+        <html id="ie7" lang="zh-CN">
+    <![endif]-->
+    <!--[if IE 8]>
+        <html id="ie8" lang="zh-CN">
+    <![endif]-->
+    <!--[if !(IE 6) | !(IE 7) | !(IE 8) ]>
+    <!-->
+		<html lang="zh-CN">
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+    	<script src="http: //html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <%  if(!posts.title) { %>
+        <title><%= title %></title> 
+        <meta name="keywords" content="<%= keywords %>" />
+        <meta name="description" content="<%= description %>" />
+    <%  }else{ %>
+        <title>前端开发-<%= posts.title %></title>
+        <meta name="keywords" content="<%= posts.keywords %>" />
+        <meta name="description" content="<%= posts.description %>" />
+    <%  } %>
+
+    <!-- Mobile Specific Metas================================================== -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- CSS================================================== -->
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+</head>
+<body>
+<!--[if lte IE 7]>
+<div class="g_tips">
+    <p>已经有超过90%的用户使用更高版本 <a target="_blank" title="下载Chrome" href="http://www.google.com/chrome/">Google Chrome</a> 或 <a target="_blank" href="http://www.microsoft.com/zh-cn/download/ie.aspx?q=internet+explorer">Internet Explorer</a> 体验到了更精彩的520UED页面，你还不试试？</p>
+</div>
+<![endif]-->
+
+<!--  头部开始  -->
+<div class="top-fix">
+    <div class="container ">
+        <div class="top-fix-wrap">
+            <h1>
+                <a href="/" title="520UED前端开发小站" class="logo">520UED前端开发小站</a>
+            </h1>
+            <div class="menu_control">
+                <a href="javascript:;"><span>菜单</span></a>
+            </div>
+        </div>
+        <div class="sixteen columns header clear-fix">
+            <div id="botmenu" class="menu">
+                <div id="submenu">
+                    <ul id="menu-mainmenu" class="sfmenu sf-js-enabled sf-shadow">
+                        <li class="menu-read current_page_item">
+                            <a href="/">HOME</a>
+                        </li>
+                        <% locals.ClassPosts.forEach(function(post, index) { %>
+                        <li class="menu-read">
+                            <a class="" href="javascript:;" >
+                                <%= post.classify %>
+
+                                <% if(post.subClassify!="") { %>
+                                <span class="sf-sub-indicator"> »</span>
+                                <% } %>
+                            </a>
+                            <% if(post.subClassify!="") { %>
+                                <ul class="sub-menu">
+                                    <% for(var i=0; i<post.subClassify.length;i++) { %>
+                                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                            <a href="/category/<%= post.subClassify[i].subName %>"><%= post.subClassify[i].subName %></a>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                            <% } %>
+
+                        </li>
+                        <% }) %>
+                        <li class="menu-read">
+                            <a href="/cloudTags">标签云</a>
+                        </li>
+                        <li class="menu-read">
+                            <a href="/rss">RSS订阅</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-op">
+                <a href="javascript:;" class="ico-search">
+                    <span class="hide-clip">搜索</span>
+                </a>
+                <div class="search-form">
+                    <div id="search" class="search_box search_box_focus">
+                        <label class="hide-clip" >请输入关键词进行搜索</label>
+                        <input type="text" data-url="/search?content=" placeholder="Search" id="s" value="">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  头部结束  -->

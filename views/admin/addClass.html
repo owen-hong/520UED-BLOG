@@ -1,0 +1,66 @@
+<div class="row-fluid">
+	<div class="span12">
+		<div class="widget-box">
+			<div class="widget-title">
+				<span class="icon">
+					<i class="icon-align-justify"></i>
+				</span>
+				<h5><%= title %></h5>
+			</div>
+			<div class="widget-content nopadding">
+				<form action="/admin/doAddClass" method="post" class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label">功能 :</label>
+						<div class="controls">
+
+							<select name="classify" style="width:240px" id="slc">
+
+					        	<option value="1">添加一级分类</option>
+
+								<% posts.forEach(function(post, index) { %>
+					        	<option value="<%= post._id %>"><%= post.classify %></option>
+					        	<% }) %>
+					       </select>
+
+						</div>
+					</div>
+					<div class="control-group" id="oneClass">
+						<label class="control-label">一级分类 :</label>
+						<div class="controls">
+							<input type="text" name="oneClass" class="span11" placeholder="一级分类" />
+						</div>
+						<div class="controls">
+							<input type="text" name="oneKey" class="span11" placeholder="keywords" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">二级分类 :</label>
+						<div class="controls">
+							<input type="text" name="subClass" class="span11" placeholder="二级分类" />
+						</div>
+						<div class="controls">
+							<input type="text" name="subKey" class="span11" placeholder="keywords" />
+						</div>
+					</div>
+					<input type='hidden' name='_csrf' id="_csrf" value='<%= csrf %>' />
+					<div class="form-actions">
+						<button type="submit" class="btn btn-success">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		$("#slc").change(function(){
+			if($(this).val()=="1"){
+				$("#oneClass").show();
+			}else{
+				$("#oneClass").hide();
+			}
+		})
+	});
+</script>
+

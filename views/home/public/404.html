@@ -1,0 +1,21 @@
+<div style="text-align:center">
+	<img style="max-width:100%;height:auto;" src="/images/season-autumn.jpg" class="img1" alt="404页面,您访问的页面不存在" />
+</div>
+
+<h1 style="text-align:center;margin:auto;color:#333;margin-top:20px;">由于网站搬迁的原因，之前的链接地址都不用，请到首页查找你想要的内容，谢谢！</h1>
+
+<p style="text-align:center;color:#222;font-size:14px;"><span id="times">5</span>s后自动跳回首页...</p>
+
+<script type="text/javascript">
+	var $span = document.getElementById("times");
+	var i = 5;
+	var times;
+	times= setInterval(function(){
+		i--;
+		$span.innerHTML = i;
+		if(i===0){
+			window.location.href = "/";
+			clearInterval(times);
+		} 
+	},1000)
+</script>

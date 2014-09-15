@@ -1,0 +1,284 @@
+.kk-left{
+    float: left !important;
+}
+
+.kk-right{
+    float: right !important;
+}
+
+.kkclear{
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 1px;
+    position: relative;
+    top: -1px;
+}
+
+.kklike-rating-none{
+	display: none;
+}
+
+/* ============================================= */
+/* ==========   SZKIELET PRZYCISKU   =========== */
+/* ============================================= */
+.kklike-content{
+    margin: 5px 0;
+}
+
+.kklike-box{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDD;
+    border-radius: 3px 3px 3px 3px;
+    display: block;
+    float: left;
+    font-family: Verdana;
+    font-size: 10px;
+    text-decoration: none;
+    color: #666666;
+    box-shadow: 0 0 2px #DDD;
+    line-height: 100%;
+}
+
+.kklike-box:hover .kklike-value{
+	color: #666666;
+}
+
+.kklike-box:hover .kklike-text{
+	color: #AAAAAA;
+}
+
+.kklike-ico{
+	background: url("../images/ico-sprite.png") no-repeat scroll 6px 6px transparent;
+    display: block;
+    float: left;
+    height: 12px;
+    padding: 4px 5px;
+    width: 12px;
+}
+
+.kklike-text{
+	float: left;
+    padding: 5px 6px 0;
+}
+
+.kklike-value{
+	border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    float: left;
+    padding: 5px 6px;
+}
+
+.kklike-load{
+	background: url("../images/load.gif") no-repeat scroll center center transparent;
+    text-indent: -9999px;
+    width: 30px;
+    padding-top: 10px;
+}
+
+/* ============================================= */
+/* =========   TEMPLATKI PRZYCISKU   =========== */
+/* ============================================= */
+
+/* ========= LIGHT ========= */
+.kklike-button-light .kklike-box{
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #e2e2e2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e2e2e2));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#e2e2e2 100%);
+    background: -o-linear-gradient(top,  #ffffff 0%,#e2e2e2 100%);
+    background: -ms-linear-gradient(top,  #ffffff 0%,#e2e2e2 100%);
+    background: linear-gradient(top,  #ffffff 0%,#e2e2e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2',GradientType=0 );
+    
+    text-shadow: 1px 1px #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0 0 2px #CCC;
+}
+
+.kklike-button-light .kklike-value{
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+}
+
+/* ========= DARK ========= */
+.kklike-button-dark .kklike-box{
+    background: #595959;
+    background: -moz-linear-gradient(top,  #595959 0%, #383838 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#595959), color-stop(100%,#383838));
+    background: -webkit-linear-gradient(top,  #595959 0%,#383838 100%);
+    background: -o-linear-gradient(top,  #595959 0%,#383838 100%);
+    background: -ms-linear-gradient(top,  #595959 0%,#383838 100%);
+    background: linear-gradient(top,  #595959 0%,#383838 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#383838',GradientType=0 );
+    
+    text-shadow: 1px 1px #000;
+    border: 1px solid #000 !important;
+    box-shadow: 0 0 2px #000;
+    color: #CCCCCC !important;
+}
+
+.kklike-button-dark .kklike-box:hover .kklike-value{
+    color: #FFFFFF;
+}
+
+.kklike-button-dark .kklike-box:hover .kklike-text{
+    color: #FFFFFF;
+}
+
+.kklike-button-dark .kklike-value{
+    border-left: 1px solid #000 !important;
+    border-right: 1px solid #000 !important;
+}
+
+.kklike-button-dark .kklike-ico{
+	background: url("../images/ico-sprite.png") no-repeat scroll 6px -10px transparent;
+}
+
+
+/* ========= BIG DARK ========= */
+
+.kklike-button-big-dark .kklike-ico {
+    background: url("../images/ico-sprite.png") no-repeat scroll 8px -32px transparent;
+    display: block;
+    float: left;
+    height: 30px;
+    padding: 0;
+    width: 36px;
+}
+
+.kklike-button-big-dark .kklike-box {
+    background: none repeat scroll 0 0 #3E3E3E;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #CCCCCC;
+    display: block;
+    float: left;
+    font-family: Verdana;
+    font-size: 11px;
+    line-height: 100%;
+    text-decoration: none;
+}
+
+.kklike-button-big-dark .kklike-box:hover .kklike-value,
+.kklike-button-big-dark .kklike-box:hover .kklike-text{
+	color: #FFFFFF;
+}
+
+.kklike-button-big-dark .kklike-load{
+    padding-top: 19px !important;
+}
+
+.kklike-button-big-dark .kklike-value {
+    border-left: 1px solid #666666;
+    border-right: 1px solid #666666;
+    float: left;
+    padding: 9px 10px;
+}
+
+.kklike-button-big-dark .kklike-text {
+    float: left;
+    padding: 9px 10px 0;
+}
+
+/* ========= BIG LIGHT ========= */
+
+.kklike-button-big-light .kklike-ico {
+    background: url("../images/ico-sprite.png") no-repeat scroll 8px -61px transparent;
+    display: block;
+    float: left;
+    height: 30px;
+    padding: 0;
+    width: 36px;
+}
+
+.kklike-button-big-light .kklike-box {
+    background: none repeat scroll 0 0 #f9f9f9;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #333;
+    display: block;
+    float: left;
+    font-family: Verdana;
+    font-size: 11px;
+    line-height: 100%;
+    text-decoration: none;
+}
+
+.kklike-button-big-light .kklike-box:hover .kklike-value,
+.kklike-button-big-light .kklike-box:hover .kklike-text{
+	color: #888;
+}
+
+.kklike-button-big-light .kklike-load{
+    padding-top: 19px !important;
+}
+
+.kklike-button-big-light .kklike-value {
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    float: left;
+    padding: 9px 10px;
+}
+
+.kklike-button-big-light .kklike-text {
+    float: left;
+    padding: 9px 10px 0;
+}
+
+/* ============================================= */
+/* ===============   WIDGETY   ================= */
+/* ============================================= */
+
+ul.kklike-most-liked{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.kklike-most-liked li{
+	clear: both;
+	margin: 0 0 5px 0;
+}
+
+.kklike-big-heart{
+	background: url("../images/admin/serce-ciemne.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 20px;
+    margin-right: 10px;
+    width: 25px;
+    margin-top: 8px;
+}
+
+.kklike-wg-text{
+	float: left;
+	width: 80%;
+}
+
+.kklike-wg-title{
+	display: block;
+}
+
+.kklike-wg-rating{
+	float: left;
+	font-size: 10px;
+}
+
+.kklike-wg-date{
+	float: right;
+	font-size: 10px;
+}
+
+.kklike-ava-box{
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    text-align: center;
+}
+
+.kklike-ava-nick{
+    line-height: 100%;
+    font-size: 10px;
+    display: block;
+}
