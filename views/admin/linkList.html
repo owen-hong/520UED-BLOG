@@ -1,0 +1,59 @@
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"> 
+            <i class="icon-th"></i> 
+        </span>
+        <h5><%= title %></h5>
+    </div>
+    <div class="widget-content nopadding">
+        <table class="table table-bordered table-striped with-check">
+            <thead>
+                <tr>
+                    <th>
+                        <i class="icon-resize-vertical"></i>
+                    </th>
+                    <th>关键词</th>
+                    <th>网址</th>
+                    <th>联系方式</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% posts.forEach(function(post, index) { %>
+                <tr>
+                    <td>
+                        <%= index+1 %>
+                    </td>
+                    <td>
+                        <%= post.keywords %>
+                    </td>
+                    <td>
+                        <%= post.links %>
+                    </td>
+                    <td>
+                        <%= post.concact %>
+                    </td>
+                    <td>
+                        <%= locals.moment(post.created).format("YYYY-MM-DD h:mm a") %>
+                    </td>
+                    <td class="center">
+                        <a href="/admin/doRemoveLinks?id=<%= post._id %>" onclick="delcfm()" class="btn btn-danger">删除</a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <!-- 分页 -->
+    <div class="dataTables_wrapper">
+        <div class="fg-toolbar ui-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix" id="pager">
+            <!-- 分页内容 -->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+</script>

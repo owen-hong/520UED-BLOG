@@ -1,0 +1,97 @@
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"> 
+            <i class="icon-th"></i> 
+        </span>
+        <h5><%= title %></h5>
+    </div>
+    <div class="widget-content nopadding">
+        <table class="table table-bordered table-striped with-check">
+            <thead>
+                <tr>
+                    <th>
+                        <i class="icon-resize-vertical"></i>
+                    </th>
+                    <th>标题</th>
+                    <th>昵称</th>
+                    <th>Email</th>
+                    <th>内容</th>
+                    <th>留言时间</th>
+                    <th>是否回复</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(posts!=="") { %>
+                    <% posts.forEach(function(post, index) { %>
+                    <tr>
+                        <td>
+                            <%= index +1 %>
+                        </td>
+                        <td>
+                            <%= post.arttitle %>
+                        </td>
+                        <td>
+                            <%= post.username %>
+                        </td>
+                        <td>
+                            <%= post.Email %>
+                        </td>
+                        <td title="<%= post.comment %>">
+                            <%= post.comment %>
+                        </td>
+                        <td class="center">
+                            <%= locals.moment(post.commentTime).format("YYYY-MM-DD h:mm a") %>
+                        </td>
+                        <td>
+                            <% if(post.reply!="") {%>
+                                <img src="img/ok.png" title="已回复" >
+                            <% }else{ %>
+                                <img src="img/no.png" title="未回复" >
+                            <% } %>
+                        </td>
+                        <td class="center">
+                            <a href="/admin/replyComment?comId=<%= post._id %>" class="btn btn-info">回复</a>
+                            <a href="/admin/deletArt?artId=<%= post._id %>" onclick="delcfm()" class="btn btn-danger">删除</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                <% } %>
+                <% if(posts=="") { %>
+                    <tr>
+                        <td colspan="8">
+                            <%= nullTip %>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <!-- 分页 -->
+    <div class="dataTables_wrapper">
+        <div class="fg-toolbar ui-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix" id="pager">
+            <!-- 分页内容 -->
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.pager.js"></script>
+<% if(posts!=="") { %>
+<script type="text/javascript">
+    var PageClick = function(pageclickednumber) {
+        
+        console.log(pageclickednumber);
+
+        window.location.href= "/admin/comment?page=" + pageclickednumber;
+        
+        $("#pager").pager({ pagenumber: pageclickednumber, pagecount:<%= maxPage %>, buttonClickCallback: PageClick });
+
+        $("#result").html("Clicked Page " + pageclickednumber);
+
+    }
+
+    $(document).ready(function() {
+        $("#pager").pager({ pagenumber:<%= currentPage %>, pagecount:<%= maxPage %>, buttonClickCallback: PageClick });
+    });
+</script>
+<% } %>
