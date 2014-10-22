@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "express": "3.4.8",
+	  "connect-flash" : "0.1.1",
     "data2xml": "0.8.0",
     "ejs": "0.8.5",
     "csurf": "^1.1.0",
