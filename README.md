@@ -1,7 +1,6 @@
 <h1>520UED-BLOG</h1>
-===========
-
-[![node version][node-image]][node-url]
+=
+<a href="http://nodejs.org/download/"><img src="https://camo.githubusercontent.com/83d21b8684f160ecb050ca622a91456279018a64/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6f64652e6a732d2533453d5f302e31302d677265656e2e7376673f7374796c653d666c61742d737175617265" alt="node version" data-canonical-src="https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square" style="max-width:100%;"></a>
 
 
 
