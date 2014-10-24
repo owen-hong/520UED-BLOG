@@ -23,7 +23,7 @@
 <code>
 1. install `node.js` `mongodb`
 2. run mongod
-3. `$ make install` 安装 520UED 的依赖包
+3. `$ npm install` 安装 520UED 的依赖包
 4. `$ node app.js`
 5. visit `localhost:3000`
 6. done!
