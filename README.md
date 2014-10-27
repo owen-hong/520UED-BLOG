@@ -1,7 +1,5 @@
 <h1>520UED-BLOG</h1>
-<a href="https://travis-ci.org/owen-hong/520UED-BLOG"><img src="https://camo.githubusercontent.com/f8a2c80061fe1fc5a007bb8604ec86eeed8e2f60/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f636e6f64656a732f6e6f6465636c75622e7376673f7374796c653d666c61742d737175617265" alt="build status" data-canonical-src="https://img.shields.io/travis/cnodejs/nodeclub.svg?style=flat-square" style="max-width:100%;"></a>
-
-<a href="http://nodejs.org/download/"><img src="https://camo.githubusercontent.com/83d21b8684f160ecb050ca622a91456279018a64/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6f64652e6a732d2533453d5f302e31302d677265656e2e7376673f7374796c653d666c61742d737175617265" alt="node version" data-canonical-src="https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square" style="max-width:100%;"></a>
+<a href="https://travis-ci.org/owen-hong/520UED-BLOG"><img src="https://camo.githubusercontent.com/f8a2c80061fe1fc5a007bb8604ec86eeed8e2f60/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f636e6f64656a732f6e6f6465636c75622e7376673f7374796c653d666c61742d737175617265" alt="build status" data-canonical-src="https://img.shields.io/travis/cnodejs/nodeclub.svg?style=flat-square" style="max-width:100%;"></a><a href="http://nodejs.org/download/"><img src="https://camo.githubusercontent.com/83d21b8684f160ecb050ca622a91456279018a64/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6f64652e6a732d2533453d5f302e31302d677265656e2e7376673f7374796c653d666c61742d737175617265" alt="node version" data-canonical-src="https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square" style="max-width:100%;"></a>
 
 
 <h2>介绍</h2>
