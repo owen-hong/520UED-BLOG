@@ -1,16 +1,16 @@
-
 var Home = require('./routes/index');
 var Admin = require('./routes/admin');
 var Passport = require('./routes/passport');
 
 var Rss = require('./models/rss.js');
-
+var Site = require('./models/sitemap.js');
 exports.handle = function(app) {
 
 
 	//rss
   	app.get('/rss', Rss.index);
-
+	app.get('/sitemap.xml', Site.index);
+	
 
 	/*
 	*	home
@@ -37,21 +37,32 @@ exports.handle = function(app) {
 	
 	app.get('/f2e_job.html', Home.f2eJob);
 
+	
+	
 	/*
-		admin
-	*/
+	 *
+	 *	admin
+	 *
+	 */
 
 	/*登录权限控制*/
 	app.get('/admin/' + '[^{login}^{register}]*',Passport.isLoggedIn);
-	
-	app.get('/admin/linkList',Passport.isLoggedIn);
 	app.get('/admin/' + '(login)|(register)',Passport.checkNotLogin);
-
+	
+	
+	//个人中心
+	app.get('/admin/editUserCenter', Passport.isLoggedIn, Admin.userCenter);
+	app.post('/admin/doEditUserCenter',Passport.isLoggedIn, Admin.doEditUserCenter);
+    
+    //修改密码
+    app.get('/admin/editPassword', Passport.isLoggedIn, Admin.changPassword);
+	app.post('/admin/doChangPassword', Passport.isLoggedIn, Admin.doChangPassword);
+    
 
 	//搜索
 	app.get('/admin/search', Admin.search);
 
-
+	
 	//首页
 	app.get('/admin',Passport.isLoggedIn);
 	app.get('/admin', Admin.index);
@@ -101,19 +112,19 @@ exports.handle = function(app) {
 
 
 	//添加友情链接
-	app.get('/admin/linkList', Admin.linkList);
+	app.get('/admin/linkList',Passport.isLoggedIn,Admin.linkList);
 	app.get('/admin/addLink', Admin.addLink);
 	app.post('/admin/doAddLink', Admin.doAddLink);
 	app.get('/admin/Commentdelet', Admin.Commentdelet);
 	app.get('/admin/doRemoveLinks', Admin.doRemoveLinks);
-
-
+	app.get('/admin/updateLinks', Admin.updateLink);
+	app.post('/admin/doUpdateLinks', Admin.doUpdateLinks);
+	
 	//添加tags
-	app.get('/admin/tags', Admin.tags);
+	app.get('/admin/tags', Passport.isLoggedIn, Admin.tags);
 	app.get('/admin/addTags', Admin.addTags);
 	app.post('/admin/doAddTags', Admin.doAddTags);
 	app.get('/admin/doRemoveTags',Admin.doRemoveTags);
-
 
 	/*passport*/
 	app.get('/admin/register', Passport.register);
@@ -122,7 +133,7 @@ exports.handle = function(app) {
 	//login
 	app.get('/admin/login', Passport.login);
 	app.post('/admin/doLogin', Passport.doLogin);
-
+	
 	//退出
 	app.get('/admin/logout',Passport.logout);
 
@@ -134,7 +145,7 @@ exports.handle = function(app) {
 	        title:'404页面'
 	    });
 	});;
-
+	
 	// Handle 500
 	// app.use(function(error, req, res, next) {
 	//     res.status(500);

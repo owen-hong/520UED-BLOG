@@ -7,32 +7,62 @@
 				</span>
 				<h5><%= title %></h5>
 			</div>
-			<div class="widget-content nopadding">
-				<form action="/admin/doAddLink" method="post" class="form-horizontal">
-					<div class="control-group">
-						<label class="control-label">关键词 :</label>
-						<div class="controls">
-							<input type="text" name="keyword" class="span11" placeholder="keyword" />
+			<% if(update) { %></%>
+				<div class="widget-content nopadding">
+					<form action="/admin/doUpdateLinks" method="post" class="form-horizontal">
+						<input type="hidden" value="<%= posts._id %>" name="linkId" />
+						<div class="control-group">
+							<label class="control-label">关键词 :</label>
+							<div class="controls">
+								<input type="text" value="<%= posts.keywords %>" name="keyword" class="span11" placeholder="keyword" />
+							</div>
 						</div>
-					</div>
-					<div class="control-group" id="oneClass">
-						<label class="control-label">链接地址 :</label>
-						<div class="controls">
-							<input type="text" name="links" class="span11" placeholder="http://" />
+						<div class="control-group" id="oneClass">
+							<label class="control-label">链接地址 :</label>
+							<div class="controls">
+								<input type="text" value="<%= posts.links %>" name="links" class="span11" placeholder="http://" />
+							</div>
 						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label">QQ/Email :</label>
-						<div class="controls">
-							<input type="text" name="concact" class="span11" placeholder="QQ或者Email联系方式" />
+						<div class="control-group">
+							<label class="control-label">QQ/Email :</label>
+							<div class="controls">
+								<input type="text" value="<%= posts.concact %>" name="concact" class="span11" placeholder="QQ或者Email联系方式" />
+							</div>
 						</div>
-					</div>
-					<input type='hidden' name='_csrf' id="_csrf" value='<%= csrf %>' />
-					<div class="form-actions">
-						<button type="submit" class="btn btn-success">Save</button>
-					</div>
-				</form>
-			</div>
+						<input type='hidden' name='_csrf' id="_csrf" value='<%= csrf %>' />
+						<div class="form-actions">
+							<button type="submit" class="btn btn-success">Save</button>
+						</div>
+					</form>
+				</div>
+			<% }else{ %></%>
+				<div class="widget-content nopadding">
+					<form action="/admin/doAddLink" method="post" class="form-horizontal">
+						<div class="control-group">
+							<label class="control-label">关键词 :</label>
+							<div class="controls">
+								<input type="text" name="keyword" class="span11" placeholder="keyword" />
+							</div>
+						</div>
+						<div class="control-group" id="oneClass">
+							<label class="control-label">链接地址 :</label>
+							<div class="controls">
+								<input type="text" name="links" class="span11" placeholder="http://" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">QQ/Email :</label>
+							<div class="controls">
+								<input type="text" name="concact" class="span11" placeholder="QQ或者Email联系方式" />
+							</div>
+						</div>
+						<input type='hidden' name='_csrf' id="_csrf" value='<%= csrf %>' />
+						<div class="form-actions">
+							<button type="submit" class="btn btn-success">Save</button>
+						</div>
+					</form>
+				</div>
+			<% }%></%>
 		</div>
 	</div>
 </div>

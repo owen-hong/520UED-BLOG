@@ -46,8 +46,6 @@ PersonSchema.statics.FindAll  = function(callback){
 	return this.find(null,callback);
 }
 
-
-
 //查询所有文章
 PersonSchema.statics.ArtFindAll = function(data,skip,count,fields,callback){
 	var options = {
@@ -64,13 +62,13 @@ PersonSchema.statics.ArtFindAll = function(data,skip,count,fields,callback){
 }
 //查询指定ID信息
 PersonSchema.statics.ArtFindId  = function(id,callback){
-	return this.find({
+	return this.findOne({
 		_id : id
 	},callback);
 }
 
 //update指定ID信息
-PersonSchema.statics.ArtUpdateId = function(id,data,callback){
+PersonSchema.statics.UpdateId = function(id,data,callback){
 	return this.findByIdAndUpdate(id,{ $set:data },callback);
 }
 

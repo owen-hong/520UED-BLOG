@@ -1,12 +1,7 @@
 var config = require('../config');
 var convert = require('data2xml')();
 var ArtPost = require('../models/artPost.js');
-
-//缓存设置
-var rssCache;
-setInterval(function() {
-  rssCache = null;
-}, 1000 * 60 * 0.1); // 五分钟清理一次
+var mcache = require('memory-cache');
 
 exports.index = function (req, res, next) {
 
@@ -18,21 +13,23 @@ exports.index = function (req, res, next) {
     //声明输出类型为xml
     res.contentType('application/xml');
 
-    if (!config.debug && rssCache) {
-        res.send(rssCache);
-    }else{
+    if (!config.debug && mcache.get('rss')) {
+        res.send(mcache.get('rss'));
+    } else {
 
         var fields = 'title created author Content _id description',
             maxItem = config.rss.max_rss_items;
 
-        ArtPost.ArtFindAll(null,0,maxItem,fields,function(err,data){
+        ArtPost.ArtFindAll(null, 0, maxItem, fields, function (err, data) {
 
             if (err) {
                 return next(err);
             }
 
             var rss_obj = {
-                _attr: { version: '2.0' },
+                _attr: {
+                    version: '2.0'
+                },
                 channel: {
                     title: config.rss.title,
                     link: config.rss.link,
@@ -42,7 +39,7 @@ exports.index = function (req, res, next) {
                 },
             };
 
-            data.forEach(function(topic){
+            data.forEach(function (topic) {
                 rss_obj.channel.item.push({
                     title: topic.title,
                     link: config.rss.link + '/article/' + topic._id,
@@ -54,10 +51,10 @@ exports.index = function (req, res, next) {
             });
 
             var rss_content = convert('rss', rss_obj);
-            rssCache = rss_content;
+
+            mcache.put('rss', rss_content, 1000 * 3600 * 24); // 一天
             res.send(rss_content);
         });
     }
 
 }
-

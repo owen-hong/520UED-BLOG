@@ -65,7 +65,7 @@ PersonSchema.statics.deletClass = function(id,callback){
 }
 
 //update指定ID信息
-PersonSchema.statics.ArtUpdateId = function(id,data,callback){
+PersonSchema.statics.UpdateId = function(id,data,callback){
 	return this.findByIdAndUpdate(id,{ $set:data },callback);
 }
 

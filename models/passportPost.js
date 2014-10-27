@@ -35,8 +35,14 @@ PersonSchema.statics.Finduser  = function(username,callback){
 	},callback);
 }
 
+PersonSchema.statics.FindOne = function(id,callback){
+	return this.findOne({
+		_id : id
+	},callback);
+}
+
 //update指定ID信息
-PersonSchema.statics.ArtUpdateId = function(id,data,callback){
+PersonSchema.statics.UpdateId = function(id,data,callback){
 	return this.findByIdAndUpdate(id,{ $set:data },callback);
 }
 //删除文章ID

@@ -38,6 +38,7 @@
                         <%= locals.moment(post.created).format("YYYY-MM-DD h:mm a") %>
                     </td>
                     <td class="center">
+                        <a href="/admin/updateLinks?id=<%= post._id %>" class="btn btn-info">编辑</a>
                         <a href="/admin/doRemoveLinks?id=<%= post._id %>" onclick="delcfm()" class="btn btn-danger">删除</a>
                     </td>
                 </tr>

@@ -1,0 +1,94 @@
+<div class="row-fluid">
+	<div class="span12">
+		<div class="widget-box">
+			<div class="widget-title">
+				<span class="icon">
+					<i class="icon-align-justify"></i>
+				</span>
+				<h5>个人中心</h5>
+			</div>
+			<div class="widget-content nopadding">
+				<form class="form-horizontal" method="post" enctype="multipart/form-data" action="/admin/doUpload" id="form1">
+					<div class="control-group">
+						<label class="control-label">头像 :</label>
+						<div class="controls">
+							<img src="<%= posts.icon %>" id="user_icon" alt="<%= posts.username %>">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">重新上传头像:</label>
+						<div class="controls">
+							<input type="file" name="imgFile" />
+							<input type="submit" value="确定上传" />
+							<span class="help-block" style="color:green" id="s_tip">上传图片</span>
+						</div>
+					</div>
+					<input type='hidden' name='_csrf' id="_csrf" value='<%= csrf %>' />
+				</form>
+				
+				<form action="/admin/doEditUserCenter?userId=<%= posts._id %>" method="post" class="form-horizontal">
+					<input type="hidden" name="userId" value="<%= posts._id %>" />
+					
+					<!-- 图片地址 -->
+					<input type="hidden" name="imgUrl" id="imgUrl" value="<%= posts.icon %>" />
+					
+					<!-- end -->
+					<div class="control-group">
+						<label class="control-label">用户名 :</label>
+						<div class="controls">
+							<input type="text" disabled="disabled"  value="<%= posts.username %>" name="username" class="span11" placeholder="title" />
+							<p style="color:red;">*此项不能更改</p>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">邮箱 :</label>
+						<div class="controls">
+							<input type="text" value="<%= posts.email %>" name="email" class="span11" placeholder="email" />
+						</div>
+					</div>
+				
+					<div class="form-actions">
+						<button type="submit" class="btn btn-success">保存修改</button>
+					</div>
+					<input type='hidden' name='_csrf' id="_csrf" value='<%= csrf %>' />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$(function(){
+		$("#form1").submit(function(){
+			var formdata = new FormData(this);  
+			$.ajax({
+				type:'post',
+				url : '/admin/doUpload',
+				data : formdata,
+				contentType: false,
+				processData: false
+
+			}).done(function(data){
+				// console.log(data);
+				$("#imgUrl").val('/' + data.Url);
+				$("#user_icon").attr("src",'/' + data.Url);
+				$("#s_tip").html("上传成功");
+
+			}).fail(function(data){
+				console.log(data);
+			});
+
+			return false;
+		})
+
+		// 选择框
+		var $select = $("#typeid").attr("data-val");
+		$("#typeid option").each(function(index,value){
+			if($(this).val()==$select){
+				$(this).attr("selected",true);
+			}
+		});
+	});
+</script>
+

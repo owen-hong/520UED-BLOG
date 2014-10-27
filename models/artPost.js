@@ -1,7 +1,7 @@
 var mongodb = require('./mongodb');
 var Schema = mongodb.mongoose.Schema;
 
-//¶¨ÒåÊı¾İ¿â×Ö¶Î,dataÊÇ¶¨ÒåÊı¾İ¿âµÄ×Ö¶ÎÊôĞÔ
+//å®šä¹‰æ•°æ®åº“å­—æ®µ,dataæ˜¯å®šä¹‰æ•°æ®åº“çš„å­—æ®µå±æ€§
 var PersonSchema = new Schema({
 	title : String,
 	keywords : String,
@@ -26,12 +26,12 @@ var PersonSchema = new Schema({
 		type:Number,
 		default : 0
 	},
-	// ´´½¨Ê±¼ä
+	// åˆ›å»ºæ—¶é—´
 	created: {
 	    type: Date,
 	    default: Date.now
 	},
-	// ¸üĞÂÊ±¼ä
+	// æ›´æ–°æ—¶é—´
 	updated: {
 	    type: Date,
 	    // default: Date.now
@@ -39,7 +39,7 @@ var PersonSchema = new Schema({
 });
 
 
-//²éÑ¯ËùÓĞÎÄÕÂ
+//æŸ¥è¯¢æ‰€æœ‰æ–‡ç« 
 PersonSchema.statics.ArtFindAll = function(data,skip,count,fields,callback){
 	var options = {
 	    skip : skip,
@@ -53,20 +53,20 @@ PersonSchema.statics.ArtFindAll = function(data,skip,count,fields,callback){
 	return this.find(data,fields, options, callback);
 }
 
-//Ä£ºı²éÑ¯,ËÑË÷²éÑ¯
+//æ¨¡ç³ŠæŸ¥è¯¢,æœç´¢æŸ¥è¯¢
 PersonSchema.statics.searchFind = function(opt,callback){
 	var query={};
 	query['title'] = new RegExp(opt);
 	return this.find(query, callback);
 }
 
-//²éÑ¯Ö¸¶¨IDĞÅÏ¢
+//æŸ¥è¯¢æŒ‡å®šIDä¿¡æ¯
 PersonSchema.statics.ArtFindId  = function(id,callback){
 	return this.find({
 		_id : id
 	},callback);
 }
-//²éÑ¯Ö¸¶¨·ÖÀàµÄÊı¾İ
+//æŸ¥è¯¢æŒ‡å®šåˆ†ç±»çš„æ•°æ®
 PersonSchema.statics.Category  = function(data,callback){
 	return this.find({
 		classify : data
@@ -74,14 +74,14 @@ PersonSchema.statics.Category  = function(data,callback){
 }
 
 
-//²éÑ¯Ò»ÌõÖ¸¶¨IDÎÄÕÂ
+//æŸ¥è¯¢ä¸€æ¡æŒ‡å®šIDæ–‡ç« 
 PersonSchema.statics.Findone  = function(id,callback){
 	return this.findOne({
 		_id : id
 	},callback);
 }
 
-//²éÑ¯tags
+//æŸ¥è¯¢tags
 PersonSchema.statics.Tags = function(opt,callback){
 	var query={};
 	query['tags'] = new RegExp(opt);
@@ -89,12 +89,12 @@ PersonSchema.statics.Tags = function(opt,callback){
 }
 
 
-//updateÖ¸¶¨IDĞÅÏ¢
+//updateæŒ‡å®šIDä¿¡æ¯
 PersonSchema.statics.ArtUpdateId = function(id,data,callback){
 	return this.findByIdAndUpdate(id,{ $set:data },callback);
 }
 
-//É¾³ıÎÄÕÂID
+//åˆ é™¤æ–‡ç« ID
 PersonSchema.statics.deletArtId = function(id,callback){
 	return this.findByIdAndRemove(id,callback);
 }

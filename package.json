@@ -2,12 +2,16 @@
   "name": "520UED",
   "version": "0.0.1",
   "private": true,
+  "customHost": [
+    "520UED.com"
+  ],
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
     "express": "3.4.8",
-	  "connect-flash" : "0.1.1",
+	"connect-flash" : "0.1.1",
+	"xmlbuilder": "^2.4.4",
     "data2xml": "0.8.0",
     "ejs": "0.8.5",
     "csurf": "^1.1.0",
@@ -20,6 +24,8 @@
     "multiparty" : "3.2.4",
     "passport" : "0.2.0",
     "passport-local" : "1.0.0",
-    "log4js" : "0.6.14"
+    "log4js" : "0.6.14",
+	"memory-cache": "0.0.5",
+	"eventproxy": "0.3.1"
   }
 }

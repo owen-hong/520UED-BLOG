@@ -117,6 +117,7 @@ exports.isLoggedIn = function(req, res, next) {
     		return false;
     	}
 		req.session.icon = data.icon;
+		req.session.userId = data._id;
 	});
 
     if (req.isAuthenticated())

@@ -78,7 +78,7 @@ app.use(express.session({
   		  console.log('connect mongodb success...');
   	}),
   	cookie : {
-  		  maxAge : 60000 * 20	//20 minutes
+  		  maxAge : 600000 * 20	//20 minutes
   	},
 }));
 
@@ -150,6 +150,7 @@ app.use(log4js.connectLogger(logger, {
 
 //启动路由中心
 routes.handle(app);
+
 
 
 //启动服务器
