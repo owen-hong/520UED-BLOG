@@ -1,19 +1,20 @@
-var Home = require('./routes/index');
-var Admin = require('./routes/admin');
-var Passport = require('./routes/passport');
+var Home = require('./controllers/index');
+var Admin = require('./controllers/admin');
+var Passport = require('./controllers/passport');
 
-var Rss = require('./models/rss.js');
-var Site = require('./models/sitemap.js');
+var Rss = require('./controllers/rss.js');
+var Site = require('./controllers/sitemap.js');
+
 exports.handle = function(app) {
-
 
 	//rss
   	app.get('/rss', Rss.index);
 	app.get('/sitemap.xml', Site.index);
-	
 
 	/*
+	*
 	*	home
+	*
 	*/
 
 	app.get('*', Home.global);
@@ -23,7 +24,7 @@ exports.handle = function(app) {
 
 	app.get('/article/:id', Home.article);
 
-	app.post('/article/doaddComment', Home.doaddComment);
+//	app.post('/article/doaddComment', Home.doaddComment);
 
 	app.get('/addPraise', Home.addPraise);
 
@@ -36,7 +37,7 @@ exports.handle = function(app) {
 	app.get('/cloudTags', Home.cloudTags);
 	
 	app.get('/f2e_job.html', Home.f2eJob);
-
+	
 	
 	
 	/*
@@ -72,13 +73,13 @@ exports.handle = function(app) {
 
 	//添加文章
 	app.get('/admin/add',Admin.addArt);
-	app.post('/admin/artPost',Admin.artPost);
+	app.post('/admin/artPost',Admin.doArtPost);
 
 	//编辑文章
 	app.get('/admin/editArt',Admin.editArt);
 
 	//更新文章
-	app.post('/admin/editUpdate',Admin.editUpdate);
+	app.post('/admin/editUpdate',Admin.doEditUpdate);
 
 	//删除文章
 	app.get('/admin/deletArt',Admin.deletArt);
@@ -101,29 +102,24 @@ exports.handle = function(app) {
 	app.get('/admin/file',Admin.file);
 	app.post('/admin/doUpload', Admin.doUpload);
 
-	//添加评论
-	app.get('/admin/comment', Admin.comment);
-	app.get('/admin/replyComment', Admin.replyComment);
-	app.post('/admin/doreplyComment', Admin.doreplyComment);
-	app.get('/admin/replyComment', Admin.replyComment);
-
-	app.get('/admin/addComment', Admin.addComment);
-	app.post('/admin/doaddComment', Admin.doaddComment);
-
-
+	
 	//添加友情链接
 	app.get('/admin/linkList',Passport.isLoggedIn,Admin.linkList);
+	
 	app.get('/admin/addLink', Admin.addLink);
 	app.post('/admin/doAddLink', Admin.doAddLink);
-	app.get('/admin/Commentdelet', Admin.Commentdelet);
+	
 	app.get('/admin/doRemoveLinks', Admin.doRemoveLinks);
+	
 	app.get('/admin/updateLinks', Admin.updateLink);
 	app.post('/admin/doUpdateLinks', Admin.doUpdateLinks);
 	
 	//添加tags
 	app.get('/admin/tags', Passport.isLoggedIn, Admin.tags);
+	
 	app.get('/admin/addTags', Admin.addTags);
 	app.post('/admin/doAddTags', Admin.doAddTags);
+	
 	app.get('/admin/doRemoveTags',Admin.doRemoveTags);
 
 	/*passport*/

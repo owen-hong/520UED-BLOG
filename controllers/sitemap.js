@@ -1,8 +1,9 @@
 var xmlbuilder = require('xmlbuilder');
 var eventproxy = require('eventproxy');
-var ArtPost = require('../models/artPost.js');
 var mcache = require('memory-cache');
+
 var config = require('../config');
+var Article = require('../proxy/Article.js');
 
 exports.index = function (req, res, next) {
     var urlset = xmlbuilder.create('urlset', {
@@ -24,10 +25,8 @@ exports.index = function (req, res, next) {
     if (sitemapData) {
         ep.emit('sitemap', sitemapData);
     } else {
-
         var fields = 'title created author Content _id description';
-
-        ArtPost.ArtFindAll(null, 0, 10000, fields, function (err, data) {
+        Article.findAll(fields, 0, 10000, function (err, data) {
             if (err) {
                 return next(err);
             }

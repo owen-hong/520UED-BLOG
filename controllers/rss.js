@@ -1,7 +1,9 @@
 var config = require('../config');
 var convert = require('data2xml')();
-var ArtPost = require('../models/artPost.js');
 var mcache = require('memory-cache');
+
+var Article = require('../proxy/Article.js');
+
 
 exports.index = function (req, res, next) {
 
@@ -20,8 +22,7 @@ exports.index = function (req, res, next) {
         var fields = 'title created author Content _id description',
             maxItem = config.rss.max_rss_items;
 
-        ArtPost.ArtFindAll(null, 0, maxItem, fields, function (err, data) {
-
+        Article.findAll(fields, 0, maxItem, function (err, data) {
             if (err) {
                 return next(err);
             }

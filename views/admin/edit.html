@@ -17,6 +17,12 @@
 			<div class="widget-content nopadding">
 				<form class="form-horizontal" method="post" enctype="multipart/form-data" action="/admin/doUpload" id="form1">
 					<div class="control-group">
+						<label class="control-label">图片预览:</label>
+						<div class="controls">
+							<img id="preview_img" src="/<%= posts.imgUrl %>" style="width:150px;" alt="<%= posts.title %>">
+						</div>
+					</div>
+					<div class="control-group">
 						<label class="control-label">文章图片:</label>
 						<div class="controls">
 							<input type="file" name="imgFile" />
@@ -51,7 +57,7 @@
 					<div class="control-group">
 						<label class="control-label">发布者 :</label>
 						<div class="controls">
-							<input type="text" name="author" class="span11" placeholder="发布者" value="<%= posts.author %>" />
+							<input type="text" name="author" disabled="disabled" class="span11" placeholder="发布者" value="<%= posts.author %>" />
 						</div>
 					</div>
 					<div class="control-group">
@@ -121,10 +127,9 @@
 				data : formdata,
 				contentType: false,
 				processData: false
-
 			}).done(function(data){
-				// console.log(data);
 				$("#imgUrl").val(data.Url);
+				$("#preview_img").attr("src",'/'+data.Url);
 				$("#s_tip").html("上传成功");
 
 			}).fail(function(data){

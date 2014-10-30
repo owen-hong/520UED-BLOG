@@ -4,6 +4,8 @@
     <title>happen | Hello World!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <script src="/admin/js/jquery-1.8.3.min.js"></script> 
+    <meta content="_csrf" name="csrf-param">
+    <meta content="<%= csrf %>" name="csrf-token">
   </head>
 <body>
 
@@ -20,6 +22,7 @@
   <input type="file" name='file3'/><br>
   <input type="file" name='file4'/><br>
   <input type="file" name='file5'/><br>
+  <input type='hidden' name='_csrf' id="_csrf" value='<%= csrf %>' />
   <input type="submit" />
 </form>
 

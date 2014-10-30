@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -71,15 +70,15 @@ app.use(require('connect-multiparty')());
 
 //启动数据库
 app.use(express.session({
-  	secret: config.db.cookieSecret,
-  	store: new MongoStore({
-  		  db : config.db.db
-  	}, function() {
-  		  console.log('connect mongodb success...');
-  	}),
-  	cookie : {
-  		  maxAge : 600000 * 20	//20 minutes
-  	},
+    secret: config.db.cookieSecret,
+    store: new MongoStore({
+        db: config.db.db
+    }, function () {
+        console.log('connect mongodb success...');
+    }),
+    cookie: {
+        maxAge: 600000 * 20 //20 minutes
+    },
 }));
 
 //启动passport登录组件
@@ -108,7 +107,7 @@ if (!config.debug) {
     // 视图缓存
     app.set('view cache', true);
 
-}else{
+} else {
 
     //开启csrf防攻击
     app.use(csurf());
@@ -118,35 +117,36 @@ if (!config.debug) {
 
 //开启csrf防攻击
 app.use(function (req, res, next) {
-  res.locals.csrf = req.csrfToken ? req.csrfToken() : '';
-  res.locals.userName = req.user;
-  next();
+    res.locals.csrf = req.csrfToken ? req.csrfToken() : '';
+    res.locals.userName = req.user;
+    next();
 });
 
 //启动log4js日志
 log4js.configure({
-      appenders: [
-          { type : 'console' },
-          {
+    appenders: [
+        {
+            type: 'console'
+        },
+        {
             type: 'file', //文件输出
             filename: 'logs/access.log',
             maxLogSize: 1024,
-            backups:3,
-            category: 'normal' 
+            backups: 3,
+            category: 'normal'
           }
       ],
-      //以[INFO] console代替console默认样式
-      replaceConsole: true
+    //以[INFO] console代替console默认样式
+    replaceConsole: true
 });
 
 var logger = log4js.getLogger('default');
 //log4js的输出级别6个: trace, debug, info, warn, error, fatal
 logger.setLevel('INFO');
 app.use(log4js.connectLogger(logger, {
-        level:'aoto',
-        format:':method :url'
-    }
-));
+    level: 'aoto',
+    format: ':method :url'
+}));
 
 //启动路由中心
 routes.handle(app);
@@ -155,15 +155,15 @@ routes.handle(app);
 
 //启动服务器
 if (!config.debug) {
-  
+
     //生成模式
-    http.createServer(app).listen(app.get('port'),function(){
+    http.createServer(app).listen(app.get('port'), function () {
         console.log('Node listening on port:' + app.get('port'));
     });
 
-}else{
+} else {
     //调试模式
-    http.createServer(app).listen(app.get('port'),function(){
+    http.createServer(app).listen(app.get('port'), function () {
         console.log('Node listening on port:' + app.get('port'));
     });
 
